@@ -28,7 +28,6 @@ public class Cvic3 extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 messageLabel.setText("Myslím si číslo, hádej!");
                 guessNum = RandomNum();
-                System.out.println(guessNum);
             }
         });
         tipBut.addActionListener(new ActionListener() {
@@ -39,12 +38,13 @@ public class Cvic3 extends JFrame {
                 {
                     boolean compareTipGuess = guessNum > Integer.parseInt(userTip.getText());
                     messageLabel.setText("Špatný odhad, " + (compareTipGuess ? "zkus větší číslo." : "zkus menší číslo."));
-                    System.out.println(compareTipGuess);
                     tries++;
                 }
                 else
                 {
                     JOptionPane.showMessageDialog(null, "Vyhrál jsi! Číslo " + guessNum + " jsi uhodl na " + tries + ". pokus, Tvé tipy: " + NumTries(stringList));
+                    tries = 1;
+                    stringList.clear();
                 }
             }
         });
