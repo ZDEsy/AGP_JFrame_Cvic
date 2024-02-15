@@ -115,7 +115,7 @@ public class Cvic2 extends JFrame{
     private void initComponents()
     {
         setContentPane(Tab);
-        setTitle("Velká písmena");
+        setTitle("Matematické operace");
         setSize(600, 450);
         setMinimumSize(new Dimension(500,350));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
