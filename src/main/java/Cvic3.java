@@ -37,8 +37,7 @@ public class Cvic3 extends JFrame {
                 stringList.add(userTip.getText());
                 if(!CompareNum(guessNum))
                 {
-                    boolean compareTipGuess = guessNum > Integer.parseInt(userTip.getText());
-                    messageLabel.setText("Špatný odhad, " + (compareTipGuess ? "zkus větší číslo." : "zkus menší číslo."));
+                    messageLabel.setText("Špatný odhad, " + CompareTipGuess());
                     tries++;
                 }
                 else
@@ -71,6 +70,11 @@ public class Cvic3 extends JFrame {
     public String NumTries(ArrayList<String> stringArray)
     {
         return stringArray.toString().replaceAll("[^0-9\\s+]",",").substring(1,stringArray.toString().length()-1);
+    }
+
+    public String CompareTipGuess()
+    {
+        return guessNum > Integer.parseInt(userTip.getText()) ? "zkus větší číslo." : "zkus menší číslo.";
     }
 
     private void initComponents()
