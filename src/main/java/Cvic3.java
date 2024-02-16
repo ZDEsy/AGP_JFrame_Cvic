@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Cvic3 extends JFrame {
     private JPanel Tab;
@@ -69,7 +70,7 @@ public class Cvic3 extends JFrame {
 
     public String NumTries(ArrayList<String> stringArray)
     {
-        return stringArray.toString();
+        return stringArray.toString().replaceAll("[^0-9\\s+]",",").substring(1,stringArray.toString().length()-1);
     }
 
     private void initComponents()

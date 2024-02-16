@@ -22,6 +22,7 @@ public class Cvic2 extends JFrame{
     private JLabel averageNum;
     private JLabel sortedNum;
 
+
     public Cvic2()
     {
         initComponents();
@@ -39,7 +40,7 @@ public class Cvic2 extends JFrame{
                 lowestNum.setText(Lowest(intArray));
                 biggestNum.setText(Biggest(intArray));
                 averageNum.setText(Average(intArray));
-                sortedNum.setText(Arrays.toString(Sort(intArray)));
+                sortedNum.setText(Arrays.toString(Sort(intArray)).replaceAll("[^0-9\\s+]",",").substring(1,Arrays.toString(Sort(intArray)).length()-1));
             }
         });
     }
